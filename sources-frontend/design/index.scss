@@ -1,0 +1,108 @@
+@import "~normalize.css/normalize.css";
+@import "mixins/reset-button.scss";
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: rgb(0, 5, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.initialize-request {
+  color: #e60000;
+}
+
+.device {
+  // height: 200px;
+  // width: 350px;
+  background: #206f20;
+  border-radius: 10px;
+  border: 1px solid #658957;
+}
+
+.dashboard {
+  margin: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  color: rgba(0, 0, 0, 0.9);
+  font-weight: bold;
+  user-select: none;
+
+  > * {
+    height: 25px;
+  }
+}
+
+.dashboard-label {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+@mixin dashboard-button {
+  background: #980d0d;
+  color: #052800;
+  cursor: pointer;
+
+  &:hover {
+    background: #ab0f0f;
+  }
+
+  &:active {
+    background: #ba0f0f;
+  }
+}
+
+.switch {
+  @include reset-button;
+  @include dashboard-button;
+}
+
+.numberfield {
+  display: inline-block;
+  display: flex;
+  background: #980d0d;
+  padding: 1px;
+  border-radius: 2px;
+}
+
+.numberfield-display {
+  flex-grow: 1;
+  width: 100px;
+  border: none;
+  background: #052800;
+  text-align: right;
+  color: red;
+  font-weight: bold;
+  padding: 0 4px;
+  appearance: textfield;
+}
+
+.numberfield-button {
+  @include reset-button;
+  @include dashboard-button;
+  width: 25px;
+}
+
+.lamp-container {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-end;
+}
+
+.lamp {
+  width: 25px;
+  background: #052800;
+  border-radius: 2px;
+
+  &.active {
+    background: #22d209;
+  }
+}

@@ -1,0 +1,8 @@
+.git
+.rsyncignore
+node_modules
+config.json
+sources-frontend-*
+postcss.config.js
+webpack.config.js
+www/storage
